@@ -15,7 +15,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-MM_BUTTON = "Ur mama's ass 🚢"
+MM_BUTTON = "Ur mommas ass 🚢"
 PP_BUTTON = "Ur pp 🔬 "
 
 START_MENU_TEXT = "Hello, I am a humiliation bot. Are you sure you want to continue?"
@@ -78,7 +78,7 @@ async def start_over(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def mm_confirm(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
-    await query.edit_message_text(text="Your mama's ass is bigger than " +
+    await query.edit_message_text(text="Your mommas ass is bigger than " +
                                        str(random_picker(mm_list, mm_worked)) + REPEAT_MENU_TEXT,
                                   reply_markup=REPEAT_MENU_MARKUP)
     return END_ROUTES
@@ -87,7 +87,7 @@ async def mm_confirm(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def pp_confirm(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
-    await query.edit_message_text(text="Your pp is smaller than " +
+    await query.edit_message_text(text="Your pp is so tiny that it's smaller than " +
                                        str(random_picker(pp_list, pp_worked)) + REPEAT_MENU_TEXT,
                                   reply_markup=REPEAT_MENU_MARKUP)
     return END_ROUTES
