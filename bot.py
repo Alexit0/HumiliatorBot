@@ -1,3 +1,6 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
 from db import pp_list, mm_list
 
 import logging
@@ -8,6 +11,9 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, \
 
 from telegram.ext import filters, MessageHandler, ApplicationBuilder, ContextTypes, \
     CommandHandler, CallbackQueryHandler, ConversationHandler
+
+
+bot_token = os.getenv('BOT_TOKEN')
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -113,7 +119,7 @@ async def end(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
 
 def main():
-    application = ApplicationBuilder().token('5978939860:AAH1Rg5hsJ0nnvZof9XIHPHkfrD9JdET0MA').build()
+    application = ApplicationBuilder().token(bot_token).build()
 
     start_handler = CommandHandler('start', start)
     cancel_handler = CommandHandler(['cancel', 'end'], cancel)
